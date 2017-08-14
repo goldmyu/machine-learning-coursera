@@ -19,7 +19,7 @@ p = zeros(m, 1);
 
 
 
-p = round(sigmoid(X*theta))
+p = round(sigmoid(X*theta));
 
 
 
