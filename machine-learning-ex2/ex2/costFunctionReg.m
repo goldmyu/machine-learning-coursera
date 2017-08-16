@@ -28,16 +28,17 @@ J = (1/m)*( -y'*log(h_x) - (((1-y)')*log(1 - h_x))) + reg_additon ;
 
 
 
-
+  
 
 reg_grad_theta_vector = (lambda/m)*theta;
 
 reg_grad_theta_vector(1) = 0;
 
-grad = (1/m)*X'*(sigmoid(X*theta)-y) + reg_grad_theta_vector;
+grad = (1/m)*X'*(h_x-y) + reg_grad_theta_vector;
 
 
 
 % =============================================================
 
 end
+  

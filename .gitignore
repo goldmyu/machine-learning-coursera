@@ -1,4 +1,5 @@
-*.mat
+token.mat
 *.pdf
 *.gdoc
+*.gsheet
 lib/
