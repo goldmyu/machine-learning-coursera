@@ -23,10 +23,25 @@ p = zeros(size(X, 1), 1);
 
 
 
+% This is a vectorized calculation for a K class neural network
+
+%we add the bias element to the first layer, AKA the input layer.
+%hence we get 1,x1,x2...,xn for n feature we have a total of n+1 inputs into the hidden layer
+ X = [ones(m,1) X];
 
 
+% This is a vectorized calc of the activation layer 2, meaning a2 matrix, each row in the matrix represents n samples (meaning one imput)
+%each row is like a single input of an n feature set into the neural netowrk, with additon of the bias,
+% then we calc the sigmoid fun of X*Theta1'
+a_2_matrix = [ones(m,1) sigmoid(X*Theta1')];
 
 
+a_3_matrix = sigmoid(a_2_matrix*Theta2');
+
+
+% each value in vector p will hold the index which has the highst probability for a given sample of n features x1,...,xn.
+% each element in p represents our neural netowrk prediction for a given sample. when we have m samples compraised of n feature not including the "DC" feature\off-set\bias what ever you want to call it.
+[prob p] = max(a_3_matrix, [], 2);
 
 
 % =========================================================================

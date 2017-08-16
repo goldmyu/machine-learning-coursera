@@ -33,6 +33,9 @@ X = [ones(m, 1) X];
 
 
 
+% this calculation computes a matrix with m rows and k coloumns with probabilites that x(i) belongs to a certain class
+h_x_of_all_classes = sigmoid(X*all_theta');
+[prob p] = max(h_x_of_all_classes,[],2);
 
 
 
